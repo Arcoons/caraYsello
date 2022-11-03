@@ -2,48 +2,40 @@
 body{
       margin: 0%;
 }
-#container__{
-      width: 100vw;
-      height: 100vh;
-      padding: 5%;
+#container{
+      width: 120vw;
+      height: 120vh;
       font-family: 'Oswald', sans-serif;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background-color: rgba(134, 132, 132, 0.76);
+      background-color: rgba(0, 0, 0, 0.76);
       color: rgb(255, 255, 255);
 }
-.card_{
+.juegos{
       width: 19em;
-      padding: 8%;
-      opacity: 0.82;
-        background-color:  rgb(1, 0, 0);
+      padding: 8%;       
+    background-color: rgb(4 0 0 / 0%);
+
 }
 .juego{
       display: flex;
       width: 100%;
-      justify-content: space-between;
-}.ganar, .perder{
-      display: flex;
       flex-direction: column;
+      justify-content: space-between;
+}#ganar, #perder{
+      display: flex;
+      
       width: 45%;
       align-items: center;
       margin-top: 5%;
-}.ganar{
+}#ganar{
       color: rgb(99, 253, 99);
 }
-.perder{
+#perder{
       color: red;
 }
 h1{
       font-size: 1.3em;
-}
-#title{
-    display: flex;
-    justify-content: center;
-    margin-top: 5%;
-    font-family: 'Oswald', sans-serif;
 }
 h1{
       font-weight: Oswald !important;
@@ -62,10 +54,6 @@ label{
       margin-bottom: 10px;
       font-family: 'Oswald', sans-serif;
 }
-.btn:hover{
-      transition: 0.5s;
-      border-radius: 15px;
-}
 
 input{
       font-family: 'Oswald', sans-serif;
@@ -74,44 +62,32 @@ input{
       display: flex;
       justify-content: center;
 }
-.moneda{
-      width: 8em;
-      height: 8em;  
-      margin-left: 25%;  
-
-      transform-style: preserve-3d;   
-}
-.moneda div{
+#moneda{
+      display: flex;
+      justify-content: center;
       width: 100%;
-      height: 100%;
-      
-      backface-visibility: hidden;
-      position: absolute;
-}
-.cara{
-      border-radius: 50%;
-      background: url('img/1000_cara.png');
-      background-size: contain;
-     
-}
-.sello{
-     background: url('img/1000_sello.png');
-     background-size: contain;
-      border-radius: 50%;
-      transform: rotateY(-365deg);
-}
-.animate-heads{
-      animation: flipHeads 480s;
-      
-}
-@keyframes flipHeads{
-      from{
-            transform: rotateY(0deg);
+      animation-name: mianimacion;
+      animation-duration: 10s;
+      animation-timing-function: ease;
+      animation-iteration-count: infinite;
+  }
+  @keyframes mianimacion {
+      0% {
+          transform: rotateX(90deg);
       }
-      to{
-            transform: rotateY(100000deg);
+      25%{
+          transform: rotateX(180deg);
       }
-}
+      50%{
+          transform: rotateX(360deg);
+      }
+      75%{
+          transform: rotateX(-180deg);
+      }
+      100%{
+          transform: rotateX(-90deg);
+      }
+  }
 
 @media screen and (min-width: 480px) {
       h1{
@@ -123,12 +99,8 @@ input{
             margin-top: 8%;
       }input{
             height: 2.5em ;
-      }.card_{
-            width: 24em;
-      }.moneda{
-            margin-left: 30%;
-            margin-top: 5%;
-            margin-bottom: 5%;
+      }.juegos{
+            width: 38em;
       }#reinicio{
             font-size: 1.1em;
             width: 5em;
@@ -142,23 +114,10 @@ input{
        h1{
             font-size: 1.8em !important;
             margin-top: 5%;
-      }
-      #container__ {    
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-left: 25%;
-            padding-right: 25% ;
-            background-color: rgba(134, 132, 132, 0.76);
-            color: rgb(255, 255, 255);
+      }.juegos{
+            width: 50em;
+            background-color: rgb(4 0 0 / 0%);
             
-      }.card_ {
-            width: 30em;
-            opacity: 0.82;
-            background-color:  rgb(1, 0, 0);
-            border-radius: 15px;
-      }.moneda {
-            margin-left: 35%;
       }
       h1{
             font-size: 1.5em;
@@ -174,9 +133,6 @@ input{
 @media screen and (min-width: 1024px) {
       .btn{
             font-size: 1em;
-      }#container__ {              
-            padding-left: 30%;
-            padding-right: 30% ;
       }Swal{
             width: 50%;
       }
@@ -187,9 +143,6 @@ input{
 @media screen and (min-width: 1200px) {
       .btn{
             font-size: 1em;
-      }#container__ {              
-            padding-left: 35%;
-            padding-right: 35%;
       }Swal{
             width: 50%;
       }

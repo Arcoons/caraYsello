@@ -1,84 +1,85 @@
-const movi = document.getElementById('moneda');
-movi.addEventListener('click',()=>{
-      movi.classList.toggle('animate-heads')
+const juego = document.getElementById('moneda');
+juego.addEventListener('click',()=>{
+      juego.classList.toggle('animate-heads')
 })
       
-
-
-const cara = document.getElementById('button-addon1');
-
-const rGnar= document.getElementById('ganar');
-const rPerder = document.getElementById('perder');
+const Victoria= document.getElementById('ganar');
+const Derrota = document.getElementById('perder');
 let i = 0 ;
 let e = 0;
 let juegos = 0 ;
 let subtotal = 0;
+const cara = document.getElementById('cara_boton');
 cara.addEventListener('click', ()=>{
       let valor = document.getElementById('inp__').value;
       valor = parseFloat(valor)
-      if(valor > 1999){
+      if(valor > 10000){
             let rando =  Math.random()*2 + 1;
             let moneda = rando.toPrecision(1);  
             if(moneda == 1){
                   console.log("gano");
                   e= e+1
-                  rGnar.innerText= e
+                  Victoria.innerText= e
                   subtotal = subtotal + valor
                   console.log(subtotal)
+                  Swal.fire({title:"Felicidades ganaste"});
             }else if(moneda > 1){
                   console.log("perdio");
-                  rPerder.innerHTML=i;  
+                  Derrota.innerHTML=i;  
                   i = i+1   
                   subtotal = subtotal - valor 
-                  console.log(subtotal)            
-            }
+                  console.log(subtotal)
+                  Swal.fire({title:"Haz perdido, buena suerte en la siguiente"});
+            }            
             juegos = i + e;
       
       }else{
-            Swal.fire({title:"Por favor ingrese un cantidad de dinero mayor o igual a 2000!!"});
+            Swal.fire({title:"Ingresa una apuesta mayor a 10000"});
       }
       
 })
 
-const sello = document.getElementById('button-addon2');
+const sello = document.getElementById('sello_boton');
 sello.addEventListener('click', ()=>{
       let valor = document.getElementById('inp__').value;
       valor = parseFloat(valor)
-      if(valor > 1999){
+      if(valor > 10000){
             let rando =  Math.random()*2 + 1;
             let moneda = rando.toPrecision(1); 
             if(moneda==2){
                   console.log("gano");
                   e= e+1
-                  rGnar.innerText= e
+                  Victoria.innerText= e
                   subtotal = subtotal + valor
                   console.log(subtotal)
+                  Swal.fire({title:"Felicidades ganaste"});
                   
             }else if(moneda <2 || moneda >2){
                   console.log("perdio");
                   i =i+1
-                  rPerder.innerHTML=i;
+                  Derrota.innerHTML=i;
                   subtotal = subtotal - valor 
                   console.log(subtotal)
+                  Swal.fire({title:"Haz perdido, buena suerte en la siguiente"});
             } 
       
             juegos = i + e;
       }else{
-            Swal.fire({title:"Por favor ingrese un cantidad de dinero mayor o igual a 2000!!"});
+            Swal.fire({title:"Ingresa una apuesta mayor a 10000"});
       }
       
      
 })
 
-const volver = document.getElementById('reinicio');
+const volver = document.getElementById('volver');
 volver.addEventListener('click', ()=>{
       if(subtotal <0){
-            alert(`Lo sentimos has perdido $ ${subtotal} y jugo ${juegos} veces`);
-            Swal.fire({title:"¡¡GRACIAS POR JUGAR!!"});
+            alert(`Perdiste $ ${subtotal} y jugaste ${juegos} veces`);
+            Swal.fire({title:"Gracias por jugar, vuelve pronto"});
            
       }else{
-            alert(`El total acumulado es $ ${subtotal} y jugo ${juegos} veces`);
-            Swal.fire({title:"¡¡GRACIAS POR JUGAR!!"});
+            alert(`Ganaste $ ${subtotal} y jugaste ${juegos} veces`);
+            Swal.fire({title:"Gracias por jugar, vuelve pronto"});
             
       }
       window.location.reload(true);
