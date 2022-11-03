@@ -74,7 +74,44 @@ input{
       display: flex;
       justify-content: center;
 }
+.moneda{
+      width: 8em;
+      height: 8em;  
+      margin-left: 25%;  
 
+      transform-style: preserve-3d;   
+}
+.moneda div{
+      width: 100%;
+      height: 100%;
+      
+      backface-visibility: hidden;
+      position: absolute;
+}
+.cara{
+      border-radius: 50%;
+      background: url('img/1000_cara.png');
+      background-size: contain;
+     
+}
+.sello{
+     background: url('img/1000_sello.png');
+     background-size: contain;
+      border-radius: 50%;
+      transform: rotateY(-365deg);
+}
+.animate-heads{
+      animation: flipHeads 480s;
+      
+}
+@keyframes flipHeads{
+      from{
+            transform: rotateY(0deg);
+      }
+      to{
+            transform: rotateY(100000deg);
+      }
+}
 
 @media screen and (min-width: 480px) {
       h1{
