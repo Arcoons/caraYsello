@@ -34,7 +34,7 @@ cara.addEventListener('click', ()=>{
                   Apuesta.innerText=subtotal;
                   Swal.fire({title:"Haz perdido, buena suerte en la siguiente"});
             }            
-            juegos = d + v;
+            
       
       }else{
             Swal.fire({title:"Ingresa una apuesta mayor a 10000"});
@@ -70,7 +70,7 @@ sello.addEventListener('click', ()=>{
                   Swal.fire({title:"Haz perdido, buena suerte en la siguiente"});
             } 
       
-            juegos = d + v;
+            
       }else{
             Swal.fire({title:"Ingresa una apuesta mayor a 10000"});
       }
