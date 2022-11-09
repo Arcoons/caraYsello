@@ -22,7 +22,7 @@ body{
       width: 100%;
       flex-direction: column;
       justify-content: space-between;
-}#ganar, #perder{
+}#ganar, #perder, #apuesta, #juegos{
       display: flex;
       
       width: 45%;
@@ -33,6 +33,10 @@ body{
 }
 #perder{
       color: red;
+}#apuesta{
+      color: rgb(253, 236, 4);
+}#juegos{
+      color: aqua;
 }
 h1{
       font-size: 1.3em;
